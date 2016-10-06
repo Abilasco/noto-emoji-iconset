@@ -4,6 +4,44 @@ Iconset for [`iron-icon`](https://elements.polymer-project.org/elements/iron-ico
 
 [See for yourself](https://raulsntos.github.io/noto-emoji-iconset/components/noto-emoji-iconset/demo).
 
+<!---
+```
+<custom-element-demo>
+  <template>
+    <script src="../webcomponentsjs/webcomponents-lite.js"></script>
+    <link rel="import" href="noto-emoji-iconset.html">
+    <link rel="import" href="emoji-icon.html">
+    <style is="custom-style">
+      #container {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px;
+      }
+      
+      iron-icon, emoji-icon {
+        --iron-icon-width: 64px;
+        --iron-icon-height: 64px;  
+        --emoji-icon-width: 64px;
+        --emoji-icon-height: 64px;
+      }
+    </style>
+    <div id="container">
+      <iron-icon icon="emoji:😆"></iron-icon>
+      <iron-icon icon="emoji:😛"></iron-icon>
+      <iron-icon icon="emoji:🎉"></iron-icon>
+      <next-code-block></next-code-block>
+      <emoji-icon emoji="dog"></emoji-icon>
+      <emoji-icon emoji="cat"></emoji-icon>
+    </div>
+  </template>
+</custom-element-demo>
+```
+-->
+```html
+<iron-icon icon="emoji:🍕"></iron-icon>
+<emoji-icon emoji="cold_sweat"></emoji-icon>
+```
+
 ![Emojis](https://github.com/raulsntos/noto-emoji-iconset/raw/master/hero.png)
 
 ## How to install
