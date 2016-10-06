@@ -8,6 +8,7 @@ Iconset for [`iron-icon`](https://elements.polymer-project.org/elements/iron-ico
 ```
 <custom-element-demo>
   <template>
+    <script>window.Polymer = {dom: 'shadow'};</script>
     <script src="../webcomponentsjs/webcomponents-lite.js"></script>
     <link rel="import" href="noto-emoji-iconset.html">
     <link rel="import" href="emoji-icon.html">
@@ -26,20 +27,18 @@ Iconset for [`iron-icon`](https://elements.polymer-project.org/elements/iron-ico
       }
     </style>
     <div id="container">
-      <iron-icon icon="emoji:😆"></iron-icon>
-      <iron-icon icon="emoji:😛"></iron-icon>
-      <iron-icon icon="emoji:🎉"></iron-icon>
       <next-code-block></next-code-block>
-      <emoji-icon emoji="dog"></emoji-icon>
-      <emoji-icon emoji="cat"></emoji-icon>
     </div>
   </template>
 </custom-element-demo>
 ```
 -->
 ```html
-<iron-icon icon="emoji:🍕"></iron-icon>
-<emoji-icon emoji="cold_sweat"></emoji-icon>
+<iron-icon icon="emoji:😆"></iron-icon>
+<iron-icon icon="emoji:😛"></iron-icon>
+<iron-icon icon="emoji:🎉"></iron-icon>
+<emoji-icon emoji="dog"></emoji-icon>
+<emoji-icon emoji="cat"></emoji-icon>
 ```
 
 ![Emojis](https://github.com/raulsntos/noto-emoji-iconset/raw/master/hero.png)
