@@ -14,6 +14,8 @@ limitations under the License.
 
 <link rel="import" href="../../polymer/polymer.html">
 
+<link rel="import" href="../../iron-list/iron-list.html">
+
 <link rel="import" href="../emoji-icon.html">
 
 <dom-module id="noto-demo">
@@ -22,48 +24,56 @@ limitations under the License.
 
     <style>
       emoji-icon {
-        --emoji-icon-width: 32px;
-        --emoji-icon-height: 32px;
-      }
-      .emoji {
-        margin: 2px;
-        padding: 16px;
-        padding-bottom: 16px;
-        position: relative;
-        display: inline-block;
-        border-radius: 2px;
-      }
-      .emoji .shortname {
-        position: absolute;
-        bottom: -8px;
-        left: -8px;
-        right: -8px;
-        text-align: center;
-        font-size: 50%;
-        color: #fff;
-        background: #333;
-        padding: 4px;
-        border-radius: 5px;
-        overflow: visible;
-        visibility: hidden;
+        will-change: transform;
+        transition: transform .2s;
+
+        --emoji-icon-width: 48px;
+        --emoji-icon-height: 48px;
       }
 
-      .emoji:hover {
-        z-index: 1;
-        transform: scale(2);
-        background-color: #eee;
+      .emoji {
+        margin: 2px;
+        position: relative;
+        display: inline-flex;
+        flex-direction: column;
+        width: 164px;
+        height: 128px;
       }
-      .emoji:hover .shortname {
-        visibility: visible;
+
+      .emoji .shortname {
+        text-align: center;
+        font-size: 80%;
+        color: rgba(0,0,0,.54);
+        padding: 16px;
+      }
+
+      .emoji .icon{
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .emoji:hover .shortname,
+      .emoji:focus .shortname {
+        color: #000;
+      }
+      .emoji:hover emoji-icon,
+      .emoji:focus emoji-icon {
+        transform: scale(1.6);
       }
     </style>
 
-    <template is="dom-repeat" items="{{emojis}}">
-      <div class="emoji">
-        <emoji-icon emoji="{{item}}"></emoji-icon>
-        <div class="shortname">{{item}}</div>
-      </div>
-    </template>
+    <iron-list grid items="[[emojis]]" as="item" scroll-target="document">
+      <template>
+        <div class="emoji" tabindex="0">
+          <div class="icon">
+            <emoji-icon emoji="[[item]]"></emoji-icon>
+          </div>
+          <div class="shortname">[[item]]</div>
+        </div>
+      </template>
+    </iron-list>
 
   </template>
 
